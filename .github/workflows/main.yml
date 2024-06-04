@@ -28,15 +28,15 @@ jobs:
     - name: Collect Subscribe
       id: collect
       run: |
-        pwd
-        ls -l
-        cd aggregator
+        # cd aggregator
         python -u subscribe/collect.py
       
     - name: Create/Update Gist
       env:
         GH_TOKEN: ${{ secrets.PAT}}
       run: |
+        pwd
+        ls -l
         cd aggregator/data
         gh gist edit ${{ secrets.GIST_ID }} --add "proxies.yaml"
         gh gist edit ${{ secrets.GIST_ID }} --add "subscribes.txt"
