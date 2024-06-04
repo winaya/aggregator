@@ -28,6 +28,8 @@ jobs:
     - name: Collect Subscribe
       id: collect
       run: |
+        pwd
+        ls -l
         cd aggregator
         python -u subscribe/collect.py
       
